@@ -1,0 +1,1 @@
+document.querySelectorAll("ul li a").forEach(link => link.textContent === document.title ? link.classList.add("active") : null);

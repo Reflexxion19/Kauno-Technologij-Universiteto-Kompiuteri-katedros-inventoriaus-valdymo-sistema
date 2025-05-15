@@ -1,0 +1,21 @@
+:root {
+    --main-color: #6884d3;
+    --accent-color: #fff;
+    --tertiary-color: #7494ec;
+    --tretiary-color-hover: #6884d3;
+    --footer-height: 60px;
+}
+
+/*#region Footer*/
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--footer-height);
+    background-color: var(--main-color);
+}
+
+.footer h3 {
+    color: white;
+}
+/*#endregion Footer*/

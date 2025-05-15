@@ -1,0 +1,196 @@
+.dselect-wrapper {
+
+    /* Toggler */
+    .form-select {
+      padding-left: 0.75rem; /* Example, replace with actual $form-select-padding-x value */
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .25rem;
+      text-align: left;
+    }
+  
+    .form-select.show {
+      border-color: #007bff; /* Replace with actual $form-select-focus-border-color */
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Replace with $form-select-focus-box-shadow */
+    }
+  
+    .form-select.dselect-clearable {
+      padding-right: 1.25rem; /* Example, replace with actual value */
+    }
+  
+    .form-select.form-select-sm {
+      padding-left: 0.5rem; /* Example, replace with actual $form-select-padding-x-sm value */
+    }
+  
+    .form-select.form-select-lg {
+      padding-left: 1rem; /* Example, replace with actual $form-select-padding-x-lg value */
+    }
+  
+    /* Menu */
+    .dropdown-menu {
+      padding: 0.375rem;
+      width: 100%;
+    }
+  
+    .form-select-sm + .dropdown-menu {
+      padding: 0.25rem;
+      font-size: 0.875rem; /* Example, replace with $form-select-font-size-sm */
+    }
+  
+    .form-select-lg + .dropdown-menu {
+      padding: 0.5rem;
+      font-size: 1.25rem; /* Example, replace with $form-select-font-size-lg */
+    }
+  
+    /* Item */
+    .dropdown-item,
+    .dropdown-header {
+      padding-left: 0.375rem;
+      padding-right: 0.375rem;
+    }
+  
+    .form-select-sm + .dropdown-menu .dropdown-item,
+    .form-select-sm + .dropdown-menu .dropdown-header {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
+  
+    .form-select-lg + .dropdown-menu .dropdown-item,
+    .form-select-lg + .dropdown-menu .dropdown-header {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  
+    /* Search input */
+    .form-control {
+      border-radius: 0;
+      box-shadow: none !important;
+      border-color: #ced4da !important; /* Replace with $input-border-color */
+      padding: 0.375rem;
+      font-size: inherit;
+    }
+  
+    .form-select-sm + .dropdown-menu .form-control {
+      padding: 0.375rem;
+    }
+  
+    .form-select-lg + .dropdown-menu .form-control {
+      padding: 0.5rem;
+    }
+  
+    /* No results */
+    .dselect-no-results {
+      padding: 0.375rem 0.375rem;
+    }
+  
+    .form-select-sm + .dropdown-menu .dselect-no-results {
+      padding: 0.25rem 0.25rem;
+    }
+  
+    .form-select-lg + .dropdown-menu .dselect-no-results {
+      padding: 0.5rem 0.5rem;
+    }
+  
+    /* Tag */
+    .dselect-tag {
+      background-color: #6c757d; /* Replace with $secondary */
+      color: #f8f9fa; /* Replace with $light */
+      padding-left: 1.5rem;
+      padding-right: 0.5rem;
+      border-radius: 0.25rem;
+      height: 2.5rem; /* Example, replace with calculated value */
+      line-height: 2.5rem; /* Example, replace with calculated value */
+      position: relative;
+    }
+  
+    .form-select-sm .dselect-tag {
+      height: auto;
+      line-height: inherit;
+    }
+  
+    .form-select-lg .dselect-tag {
+      height: 3rem;
+      line-height: 3rem;
+    }
+  
+    .dselect-tag-remove {
+      position: absolute;
+      left: 0.25rem;
+      top: 50%;
+      margin-top: -7px;
+      color: rgba(248, 249, 250, 0.35); /* Replace with $light */
+      transition: color 0.15s ease-in-out;
+    }
+  
+    .dselect-tag-remove:hover {
+      color: #f8f9fa; /* Replace with $light */
+    }
+  
+    /* Placeholder */
+    .dselect-placeholder {
+      color: #6c757d; /* Replace with $input-placeholder-color */
+    }
+  
+    /* Optgroups */
+    .dropdown-header ~ .dropdown-item {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  
+    .form-select-sm + .dropdown-menu .dropdown-header {
+      font-size: 0.85em;
+    }
+  
+    .form-select-sm + .dropdown-menu .dropdown-item {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
+  
+    .form-select-lg + .dropdown-menu .dropdown-item {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  
+    /* Clear */
+    .dselect-clear {
+      position: absolute;
+      padding: 0;
+      border: 0;
+      box-shadow: none;
+      top: 0;
+      bottom: 0;
+      right: 1rem; /* Example, replace with actual $form-select-indicator-padding */
+      display: flex;
+      align-items: center;
+      color: #6c757d; /* Replace with $text-muted */
+      cursor: pointer;
+    }
+  
+    .dselect-clear:hover {
+      color: inherit;
+    }
+  
+    .dselect-clear svg {
+      width: 0.625rem; /* Example, replace with $dselect-clear-icon-width */
+      height: 0.625rem; /* Example, replace with $dselect-clear-icon-width */
+    }
+  
+    [data-dselect-text=""] ~ .dselect-clear {
+      display: none;
+    }
+  
+    /* Validation */
+    .was-validated .form-select:invalid + .dselect-clear .form-select,
+    .form-select.is-invalid + .dselect-clear .form-select {
+      border-color: #dc3545; /* Replace with $form-feedback-invalid-color */
+      box-shadow: 0 0 0.2rem 0.2rem rgba(220, 53, 69, 0.25); /* Replace with actual values */
+    }
+  
+    .was-validated .form-select:valid + .dselect-clear .form-select,
+    .form-select.is-valid + .dselect-clear .form-select {
+      border-color: #28a745; /* Replace with $form-feedback-valid-color */
+      box-shadow: 0 0 0.2rem 0.2rem rgba(40, 167, 69, 0.25); /* Replace with actual values */
+    }
+}  

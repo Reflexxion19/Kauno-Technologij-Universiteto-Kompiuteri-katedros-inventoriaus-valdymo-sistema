@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+    --main-color: #6884d3;
+    --accent-color: #fff;
+    --tertiary-color: #7494ec;
+    --tretiary-color-hover: #6884d3;
+    --nav-menu-color: #313131;
+    --nav-bar-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", serif;
+}
+
+/*#region Something*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    height: calc(100vh - var(--nav-bar-height) - 40px);
+    margin: 20px;
+}
+
+.container button {
+    aspect-ratio : 1 / 1;
+    width: 20%;
+    background: var(--tertiary-color);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
+}
+
+.container button i {
+    font-size: 10vw;
+    padding: 20px;
+}
+
+.container button p {
+    font-size: 2vw;
+}
+
+.container button:hover {
+    background: var(--tretiary-color-hover);
+}
+/*#endregion Something*/
+
+/*#region @media*/
+@media screen and (max-width: 900px) {
+    .container {
+        height: unset;
+    }
+
+    .container button {
+        width: 33%;
+        font-size: 10vw;
+    }
+
+    .container button i {
+        font-size: 15vw;
+    }
+
+    .container button p {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container  {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .container button {
+        width: 90%;
+        font-size: 40vw;
+    }
+
+    .container button i {
+        font-size: 25vw;
+    }
+
+    .container button p {
+        font-size: 8vw;
+    }
+}
+/*#endregion @media*/
