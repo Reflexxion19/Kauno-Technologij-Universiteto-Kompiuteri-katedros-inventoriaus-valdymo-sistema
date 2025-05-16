@@ -9,7 +9,7 @@ $server_base64_private_key = "";
 $server_base64_public_key = "";
 
 $HEADERS = "From: KTUIVS <ktuivs@gmail.com>";
-$PROJECT_NAME = "projektas";
+$PROJECT_NAME = "localhost/projektas";
 
 $conn = new mysqli($host, $user, $password, $database);
 

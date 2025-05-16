@@ -1,4 +1,0 @@
-dependencies:
-  relay:
-    version: "*"
-    override_path: '../../../'
