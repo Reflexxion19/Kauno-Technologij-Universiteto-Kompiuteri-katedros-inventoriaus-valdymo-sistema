@@ -1386,13 +1386,16 @@ function calculate_year_returned_and_not_returned_in_time_loans($year){
 
 #region Mail
 function sendEmailVerificationMail($recipient, $verification_token){
-    $headers = "From: KTUIVS <reflexxion.usage@gmail.com>";
+    global $HEADERS;
+    global $PROJECT_NAME;
+
+    $headers = $HEADERS;
     $to = $recipient;
     $subject = "El. pašto adreso patvirtinimas KTUIVS";
 
     $message = "Sveiki,\n\n";
     $message .= "Sveikiname prisijungus prie KTUIVS sistemos.\n\n";
-    $message .= "Paspauskite ant nuorodos, jog patvirtintumėte savo elektroninio pašto adresą: https://ktuivs.reflexxion.lt/email_verification.php?token=$verification_token\n";
+    $message .= "Paspauskite ant nuorodos, jog patvirtintumėte savo elektroninio pašto adresą: https://" . $PROJECT_NAME . "/email_verification.php?token=$verification_token\n";
     $message .= "Jeigu nesiregistravote prie sistemos KTUIVS, ignoruokite šį laišką.\n\n";
     $message .= "Nebandykite atsakyti į šią žinutę. Tai yra automatinis pranešimas.\n\n";
     $message .= "Pagarbiai,\n";
@@ -1406,8 +1409,10 @@ function sendEmailVerificationMail($recipient, $verification_token){
 }
 
 function sendFeedbackMail($recipient, $inventory){
-    $headers = "From: KTUIVS reflexxion.usage@gmail.com";
-    $to = "tankiuks9@gmail.com"; // PAKEISTI Į $recipient!!!
+    global $HEADERS;
+
+    $headers = $HEADERS;
+    $to = $recipient;
     $subject = "Pasikeitė jūsų paskolos prašymo statusas sistemoje KTUIVS";
 
     $message = "Sveiki,\n\n";

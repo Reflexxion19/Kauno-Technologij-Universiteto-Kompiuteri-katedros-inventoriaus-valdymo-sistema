@@ -103,19 +103,4 @@ if (!isset($_SERVER["CONTENT_TYPE"]) || $_SERVER["CONTENT_TYPE"] !== "applicatio
     }
 }
 
-
-
-
-// $keypair = generateRandomKeyPair();
-// $public_key = $keypair['public_key'];
-// $private_key = $keypair['private_key'];
-
-// $base64_public_key = base64_encode($public_key);
-// $base64_private_key = base64_encode($private_key);
-
-// $message = generateRandomString(10);
-
-// $base64_encrypted_message = encryptMessage($public_key, $private_key, $message);
-// decryptMessage($base64_public_key, $base64_private_key, $base64_encrypted_message);
-
 ?>
