@@ -8,4 +8,4 @@
 #define PASS ""
 
 #define SERVER_ADDRESS ""
-#define SKIP_CERT_COMMON_NAME_CHECK false
+#define SKIP_CERT_COMMON_NAME_CHECK true
