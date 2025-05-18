@@ -453,9 +453,8 @@ function unlockStorage($storage_id_code){
 
         if($row){
             if($row['device_name'] === NULL || $row['public_key'] === NULL || $row['address'] === NULL){
-                $_SESSION['error_message'] = "Talpykla neturi elektroninio užrakto! Pereikite prie inventoriaus pasiskolinimo!";
-                header("Location: loan_inventory.php");
-                exit();
+                $_SESSION['error_message'] = "Talpykla neturi elektroninio užrakto!";
+                return;
             }
 
             $base64_encrypted_message = encryptMessage($row['public_key'], "unlock");
@@ -469,17 +468,6 @@ function unlockStorage($storage_id_code){
 
             if($output === "Success"){
                 $_SESSION['success_message'] = "Talpykla sėkmingai atidaryta!";
-
-                echo "<script>
-                    window.addEventListener('load', (event) => {
-                        if(document.getElementById('loan-tab')){
-                            document.getElementById('loan-tab').click();
-                        } else if (document.getElementById('return-tab')){
-                            document.getElementById('return-tab').click();
-                        }
-                    });
-                    </script>";
-
                 return;
             } elseif($output === "Failed"){
                 $_SESSION['error_message'] = "Talpyklos atidaryti nepavyko! Bandykite dar kartą!";
