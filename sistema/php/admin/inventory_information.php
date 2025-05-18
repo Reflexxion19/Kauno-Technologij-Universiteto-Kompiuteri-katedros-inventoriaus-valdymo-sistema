@@ -36,13 +36,17 @@ if (isset($_GET['inventory_id'])) {
 }
 
 if (isset($_POST['update_inventory'])) {
-    $name = $_POST['name'];
-    $location = (int)$_POST['location'];
-    $serial_number = $_POST['serial_number'];
-    $inventory_number = $_POST['inventory_number'];
-    $description = $_POST['description'];
+    if($_POST['location'] !== "NULL"){
+        $name = $_POST['name'];
+        $location = (int)$_POST['location'];
+        $serial_number = $_POST['serial_number'];
+        $inventory_number = $_POST['inventory_number'];
+        $description = $_POST['description'];
 
-    updateInventory($name, $location, $serial_number, $inventory_number, $description, $inventory_id);
+        updateInventory($name, $location, $serial_number, $inventory_number, $description, $inventory_id);
+    } else {
+        $_SESSION['error_message'] = "Vieta nepasirinkta!";
+    }
 }
 
 if (isset($_POST['delete_inventory'])) {
@@ -88,6 +92,12 @@ $path = "../../images/qr_codes/";
                         <label for="location_select" class="form-label">Vieta</label>
                         <select class="form-select" id="location_select" name="location" aria-label="Location select" required disabled>
                         <?php
+                        if($row_inventory['fk_inventory_location_id'] === NULL){    
+                        ?>
+                            <option selected value="NULL">NULL</option>
+                        <?php
+                        }
+
                         while($row_locations = mysqli_fetch_assoc($result_locations)){
                         ?>
                             <option <?php echo (htmlspecialchars($row_inventory['fk_inventory_location_id'], ENT_QUOTES, 'UTF-8') === htmlspecialchars($row_locations['id'], ENT_QUOTES, 'UTF-8')) ? "selected" : "" ?> 
