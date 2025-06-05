@@ -74,6 +74,7 @@ function isActiveForm($formName, $activeForm) {
                 <input type="email" name="email_login" placeholder="El. paštas" id="email_login" required>
                 <input type="password" name="password_login" placeholder="Slaptažodis" id="password_login" required>
                 <button type="submit" name="login">Prisijungti</button>
+                <p>Pamiršote slaptažodį? <a href="password_reset.php">Atstatykite</a></p>
                 <p>Neturite paskyros? <a href="#" onclick="showForm('register-form')">Prisiregistruokite</a></p>
             </form>
         </div>

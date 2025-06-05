@@ -1373,6 +1373,28 @@ function calculate_year_returned_and_not_returned_in_time_loans($year){
 #endregion
 
 #region Mail
+function sendPasswordResetMail($recipient, $token){
+    global $HEADERS;
+    global $PROJECT_NAME;
+
+    $headers = $HEADERS;
+    $to = $recipient;
+    $subject = "Slaptažodžio atstatymas KTUIVS";
+
+    $message = "Sveiki,\n\n";
+    $message .= "Paspauskite ant nuorodos, jog atstatytumėte savo KTUIVS paskyros slaptažodį: https://" . $PROJECT_NAME . "/new_password.php?token=$token\n";
+    $message .= "Jeigu nebandėte atstatyti KTUIVS paskyros slaptažodžio, ignoruokite šį laišką.\n\n";
+    $message .= "Nebandykite atsakyti į šią žinutę. Tai yra automatinis pranešimas.\n\n";
+    $message .= "Pagarbiai,\n";
+    $message .= "KTUIVS";
+
+    if(mail($to, $subject, $message, $headers)){
+        return true;
+    } else{
+        return false;
+    }
+}
+
 function sendEmailVerificationMail($recipient, $verification_token){
     global $HEADERS;
     global $PROJECT_NAME;

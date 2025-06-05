@@ -167,7 +167,10 @@ if (isset($_POST['login'])) {
                     header("Location: ../php/student/student_loans.php");
                 }
                 exit();
-            }
+            } else {
+		        $_SESSION['login_error'] = 'Neteisingas el. pašto adresas arba slaptažodis!';
+        	    $_SESSION['active_form'] = 'login';
+	        }
         } else {
             $_SESSION['login_error'] = 'Jūs dar nepatvirtinote savo el. pašto adreso! Patvirtinkite el. pašto adresą, kad galėtumėte prisijungti!';
             $_SESSION['active_form'] = 'login';
